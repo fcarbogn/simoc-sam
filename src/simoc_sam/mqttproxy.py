@@ -44,9 +44,6 @@ local_client = mqtt.Client()
 local_client.on_connect = on_local_connect
 local_client.on_message = on_message
 
-local_client.tls_set(ca_certs="/etc/mosquitto/certs/ca.crt", certfile="/etc/mosquitto/certs/client.crt", keyfile="/etc/mosquitto/certs/client.key")
-local_client.tls_insecure_set(True)
-
 # Connect to the local MQTT broker
 local_client.connect(LOCAL_BROKER, LOCAL_PORT, KEEPALIVE)
 # Connect to the remote MQTT broker
